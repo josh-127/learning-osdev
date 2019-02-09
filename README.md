@@ -1,0 +1,13 @@
+# Learning OSDev
+
+## Requirements
+
+| Dependency       | Version       | Comments          |
+|------------------|---------------|-------------------|
+| Ubuntu           | 16.04 LTS     |                   |
+| GCC              | 5.4.0         |                   |
+| GNU Binutils     | 2.26.1        |                   |
+| GRUB             | 2.02~beta2-36 |                   |
+| NASM             | 2.11.08       |                   |
+| qemu-system-i386 | 2.5.0         |                   |
+| xorriso          | 1.4.2         | For grub-mkrescue |
