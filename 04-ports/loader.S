@@ -16,6 +16,8 @@ section .multiboot
 section .text
     __loader:
         lgdt [__gdtptr]
+        jmp 0x8:.L1
+    .L1:
 
         mov esp, kernel_stack
         push eax
@@ -41,14 +43,14 @@ section .rodata
         db 0
         db 0b10011010
         db 0b11001111
-        db 0xFF
+        db 0
         ; Data Descriptor
         dw 0xFFFF
         dw 0
         db 0
         db 0b10010010
         db 0b11001111
-        db 0xFF
+        db 0
     __gdt_data_end:
 
 
