@@ -46,6 +46,7 @@ section .text
         mov ebp, esp
         mov eax, DWORD [ebp + 0x8]
         mov dx, WORD [ebp + 0xC]
+        out dx, eax
         leave
         ret
 
