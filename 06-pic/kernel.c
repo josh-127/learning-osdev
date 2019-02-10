@@ -1,7 +1,7 @@
-#include "x86.h"
-#include "x86-interrupts.h"
 #include "stdint.h"
 #include "video.h"
+#include "x86.h"
+#include "x86-interrupts.h"
 
 #define PIC_MASTER_CMD  0x20
 #define PIC_MASTER_DATA 0x21
@@ -45,7 +45,7 @@ void kmain(void* multiboot_params, uint32_t magic) {
     __x86_outb(0x4, PIC_MASTER_DATA);  // ICW3 - Points to slave PIC (must be 0x4; refer to Section 5.8 - Table 5-13).
     __x86_outb(0x1, PIC_MASTER_DATA);  // ICW4 - More parameters.
 
-    __x86_outb(0x10, PIC_SLAVE_CMD);   // ICW1 - Ditto.
+    __x86_outb(0x11, PIC_SLAVE_CMD);   // ICW1 - Ditto.
     __x86_outb(0x28, PIC_SLAVE_DATA);  // ICW2 - Slave will emit IRQs 0x28-0x2F.
     __x86_outb(0x2, PIC_SLAVE_DATA);   // ICW3 - Points to master PIC (can be 0x2, 0x4, or 0x8; refer to the same table).
     __x86_outb(0x1, PIC_SLAVE_DATA);   // ICW4 - More parameters.
